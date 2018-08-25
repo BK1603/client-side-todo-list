@@ -8,18 +8,33 @@
   -->
 </head>
 <body>
+<div id="divbody"></div>
+<div id="header">
+  <h1 align="center"> TO <span>DO</span></h1>
+</div>
+
+<div id="toggle">
+    <input type = "checkbox" id="toggle-btn" onchange="toggle()">
+    <h2>DARK MODE</h2>
+</div>
+
   <div class='container'>
     <div class='title-and-input'>
       <h1>Nick's Simple JavaScript Todo List</h1>
       <h2>For when you just need to get stuff done and keep track of it</h2>
       <div class='input'>
         <span>Enter items here:</span>
-        <input id='inputfield' type='text' placeholder='Enter and item here'>
+        <input id='inputfield' type='text' placeholder='Enter item here'>
         <button id='inputbutton' class='blue-button'>Enter</button>
       </div>
-      <div>
-        <p>Todo List: (click on the list items to remove them)</p>
-        <ul id='todo-list'></ul>
+      <div id="todo">
+        <fieldset>
+          <legend>
+            <h2> Todo List </h2>
+          </legend>
+          <p>Click on the list items to remove them.</p>
+          <ul id='todo-list'></ul>
+        </fieldset>
       </div>
     </div>
   </div>
