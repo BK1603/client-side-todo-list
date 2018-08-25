@@ -75,26 +75,24 @@ const checkKey = (event) => {
 inputButton.addEventListener('click', sendInput);
 inputField.addEventListener('keypress', checkKey);
 
-//DARK MODE STARTS
+// dark mode start
 
-var btn = document.getElementById("toggle-btn");
-
-function toggle(){
-  var header=document.getElementById("header");
-  var divbody=document.getElementById("divbody");
-  var body=document.body;
-  if(btn.checked == true){
-    body.style.borderTop="6px solid #54006d";
-    body.style.backgroundColor="rgba(0,0,0,0.6)";
-    divbody.style.display="block";
-    header.style.backgroundColor="#54006d";
-    header.style.color="white";  
+const toggle = () => {
+  const header = document.getElementById('header');
+  const divbody = document.getElementById('divbody');
+  const { body } = document;
+  const btn = document.getElementById('toggle-btn');
+  if (btn.checked === true) {
+    body.style.borderTop = '6px solid #54006d';
+    body.style.backgroundColor = 'rgba(0,0,0,0.6)';
+    divbody.style.display = 'block';
+    header.style.backgroundColor = '#54006d';
+    header.style.color = 'white';
+  } else {
+    body.style.borderTop = '6px solid rgba(0,0,255,0.6)';
+    divbody.style.display = 'none';
+    header.style.backgroundColor = 'rgba(0,0,255,0.6)';
+    header.style.color = 'black';
   }
-  else{
-    body.style.borderTop="6px solid rgba(0,0,255,0.6)";
-    divbody.style.display="none";
-    header.style.backgroundColor="rgba(0,0,255,0.6)";
-    header.style.color="black"; 
-  }
-}
-//DARK MODE ENDS
+};
+// dark mode end
