@@ -5,58 +5,33 @@ set the box-sizing to border-box, so that I don't have to do the additional math
   padding: 0;
   box-sizing: border-box;
 }
-
+html, body {
+  height: 100%;
+}
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background-image: url("../img/background-photo.jpg");
+}
+/*-------------
+  Flexbox Layout Start
+-------------*/
+#container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  background: url("../img/background-photo.jpg") no-repeat;
   background-size: cover;
-  background-repeat:no-repeat;
-  border-top:6px solid rgba(0,0,255,0.6);
 }
-
-#divbody{
-  display:none;
-  position:fixed;
-  top:0;
-  width:100%;
-  height:100vh;
-  background-color:rgba(0,0,0,0.6);
-  z-index:-1;
+#column {
+  display: flex;
+  flex-direction: column;
 }
-
-/*TOGGLE BUTTON FOR DARK MODE*/
-#toggle{
-  background-color:rgb(56, 2, 71);
-  color:white;
-  position: fixed;
-  top:10px;
-  right:10px;
-  padding:10px 20px;
-  z-index:3;
+#title-and-input {
+  display: flex;
+  flex-direction: column;
 }
-#toggle h2{display:inline-block;}
-
-.input {
-  margin: 20px 0px;
-}
-
-li {
-  list-style-type: none;
-  margin-left: 20px;
-  margin-top: 5px;
-  font-size:24px;
-}
-
-li button {
-  background-color: rgb(244, 74, 17);
-  margin-left:30px /*4px*/;
-}
-
-li button:hover {
-  background-color: rgb(170, 0, 0);
-  margin-left:30px /*4px*/;
-  transform:scale(1.4,1.4);
-}
+/*-------------
+  Flexbox Layout End
+-------------*/
 
 .blue-button {
   background-color:rgb(10, 155, 181) /*rgb(171, 242, 246)*/;
@@ -67,75 +42,84 @@ li button:hover {
   background-color:rgba(0,0,255,0.6);
   transform:scale(1.2,1.2);
 }
-
-button {
-  border-radius: 4px;
-  font-weight: bold;
-  padding: 2px;
+h1{
+  margin:1.2em 0;
+}
+#todo fieldset legend h2{
+  color:white;
+}
+#inputfield{
+  margin:5px 20px;
+  padding:5px 10px;
+  width:300px;
+}
+li {
+  list-style-type: none;
+  margin-left: 20px;
+  margin-top: 5px;
+  font-size:24px;
+}
+li button {
+  background-color: rgb(244, 74, 17);
+  margin-left:30px /*4px*/;
+}
+li button:hover {
+  background-color: rgb(170, 0, 0);
+  margin-left:30px /*4px*/;
+  transform:scale(1.4,1.4);
 }
 
-/* flexbox layout start */
-
-.container {
-  display: flex;
-  margin: 1vh 10%;
-  justify-content: center;
-  border:2px solid #8E8F8F;
-  height:86vh;
-  background-image:linear-gradient(rgba(0,0,0,0.05) ,rgba(0,0,0,0.2));
-
+/*-------------
+  Dropdown CSS Start
+-------------*/
+#dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  padding: 6px 8px;
+  z-index: 1;
 }
-
-.title-and-input {
-  display: flex;
-  flex-direction: column;
+#dropdown:hover #dropdown-content {
+  display: block;
 }
+#dropdown-content > p {
+  color: blue;
+}
+/*-------------
+  Dropdown CSS End
+-------------*/
 
-  .title-and-input h1{
-    margin:1.2em 0;
-    color:#545759 ;
-    
-  }
-  .title-and-input h2{
-    color:#666768;
-  }
-  .title-and-input fieldset legend h2{
-    color:white;
-  }
-  .input span{
-      font-weight:bold;
-      font-size:24px;
-  }
-  #inputfield{
-    margin:5px 20px;
-    padding:5px 10px;
-    width:300px;
-  }
+/*-------------
+  Dark Mode CSS Start
+-------------*/
+.dark-mode-background {
+  background: #575A6A !important;
+}
+.dark-mode-text {
+  color: #E3E5F1 !important;
+}
+/*-------------
+  Dark Mode CSS End
+-------------*/
 
-/*Class for the struck of text that has been marked completed
-  also changes the text color to grey*/
+/*-------------
+  Generic Classes Start
+-------------*/
+.inline-block {
+  display: inline-block;
+}
+.cursor {
+  cursor: pointer;
+}
+/*-------------
+  Generic Classes End
+-------------*/
 
+/*
+  Class for the struck of text that has been marked completed
+  also changes the text color to grey
+*/
 .completed {
     text-decoration: line-through;
     color: #3b3c3d  /*#888888*/;
-}
-
-
-/*HEADER*/
-
-#header{
-  position:relative;
-  z-index:-2;
-  width:300px;
-  height:12vh;
-  display:inline-block;
-  margin:auto 35%;
-  padding:20px 40px;
-  background-color:rgba(0,0,255,0.6);
-}
-
-#header span{
-  background-color:purple;
-  color:white;
-  padding:2px 6px ;
 }
