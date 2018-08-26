@@ -8,18 +8,33 @@
   -->
 </head>
 <body>
-  <div class='container'>
-    <div class='title-and-input'>
-      <h1>Nick's Simple JavaScript Todo List</h1>
-      <h2>For when you just need to get stuff done and keep track of it</h2>
-      <div class='input'>
-        <span>Enter items here:</span>
-        <input id='inputfield' type='text' placeholder='Enter and item here'>
-        <button id='inputbutton' class='blue-button'>Enter</button>
+  <div id='container'>
+    <div id="column">
+      <div id='title-and-input'>
+        <div id="name-and-menu">
+          <h1 class="inline-block">Nick's Simple JavaScript Todo List</h1>
+          <div id="menu" class="inline-block">
+            <div id="dropdown" class="cursor">
+              <button>Options Menu</button>
+              <div id="dropdown-content">
+                <p id="dark-mode-toggle">Dark Mode Toggle</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id='input'>
+          <span>Enter items here:</span>
+          <input id='inputfield' type='text' placeholder='Enter item here'>
+          <button id='inputbutton' class='blue-button'>Enter</button>
+        </div>
       </div>
-      <div>
-        <p>Todo List: (click on the list items to remove them)</p>
-        <ul id='todo-list'></ul>
+      <div id="todo">
+        <fieldset>
+          <legend>
+            <h2> Todo List </h2>
+          </legend>
+          <ul id='todo-list'></ul>
+        </fieldset>
       </div>
     </div>
   </div>

@@ -1,15 +1,13 @@
 /*
   Todo: add unit testing so that when I add more features,
-  I don't have to test everything each time
-  Todo: add a button that adds a class with the strike-through
-  property for the text, without deleting it
+  so I don't have to test everything each time
 */
 
 // sets shorter names to select specific elements in the page
 const inputButton = document.getElementById('inputbutton');
 const inputField = document.getElementById('inputfield');
 const todoList = document.getElementById('todo-list');
-
+const dmToggle = document.getElementById('dark-mode-toggle');
 
 /*
   Function to mark the task as completed, sets the class completed from
@@ -71,6 +69,14 @@ const checkKey = (event) => {
   }
 };
 
+// toggles the dark mode classes on the page elements
+const toggleDarkMode = () => {
+  const container = document.querySelector('#container');
+  container.classList.toggle('dark-mode-background');
+  container.classList.toggle('dark-mode-text');
+};
+
 // adds event listeners to the button and field to watch for user input
 inputButton.addEventListener('click', sendInput);
 inputField.addEventListener('keypress', checkKey);
+dmToggle.addEventListener('click', toggleDarkMode);
