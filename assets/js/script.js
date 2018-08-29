@@ -8,6 +8,25 @@ const inputButton = document.getElementById('inputbutton');
 const inputField = document.getElementById('inputfield');
 const todoList = document.getElementById('todo-list');
 const dmToggle = document.getElementById('dark-mode-toggle');
+const fontSelector = document.getElementById('font');
+
+// function to change the font according to the one selected by the user
+const changeFont = (event) => {
+  const font = event.currentTarget.value;
+  switch (font) {
+    case 'Helvetica':
+      document.body.style.fontFamily = 'helvetica';
+      break;
+    case 'Times':
+      document.body.style.fontFamily = 'times';
+      break;
+    case 'Courier':
+      document.body.style.fontFamily = 'Courier, monospace';
+      break;
+    default:
+      document.body.style.fontFamily = 'helvetica';
+  }
+};
 
 /*
   Function to mark the task as completed, sets the class completed from
@@ -80,3 +99,4 @@ const toggleDarkMode = () => {
 inputButton.addEventListener('click', sendInput);
 inputField.addEventListener('keypress', checkKey);
 dmToggle.addEventListener('click', toggleDarkMode);
+fontSelector.addEventListener('change', changeFont);
