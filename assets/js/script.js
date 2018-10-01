@@ -68,8 +68,9 @@ const removeEl = (event) => {
 // adds a delete button that, when clicked, deletes the li element and the new button
 const addDelButton = (li) => {
   const button = document.createElement('button');
-  const buttonText = document.createTextNode('Delete');
-  button.appendChild(buttonText);
+  const buttonSpan = document.createElement('span');
+  buttonSpan.innerHTML = 'Delete';
+  button.appendChild(buttonSpan);
   li.appendChild(button);
   button.addEventListener('click', removeEl);
 };

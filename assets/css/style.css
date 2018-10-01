@@ -44,6 +44,7 @@ body {
   display: inline-block;
   position:relative;
   transition: 0.4s;
+  -webkit-transition: 0.4s;
 }
 .blue-button span:after {
   content: '+';
@@ -52,6 +53,7 @@ body {
   top: 0;
   right: -5px;
   transition: 0.4s;
+  -webkit-transition: 0.4s;
 }
 .blue-button:hover{
   background-color:rgba(0,0,255,0.6);
@@ -85,9 +87,27 @@ li {
 }
 li button {
   background-color: rgb(244, 74, 17);
+  position: relative;
+  right: 0;
   border: none;
   padding: 5px 10px;
   margin: 10px;
+}
+li button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+}
+li button span:after {
+  content: '\f00d';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -5px;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
 }
 li button:hover {
   background-color: rgb(170 , 0, 0);
@@ -97,13 +117,38 @@ li button:hover {
   transition: 0.4s;
   -webkit-transition: 0.4s;
 }
+li button:hover span {
+  padding-right: 25px;
+}
+li button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 
 /*-------------
   Dropdown CSS Start
 -------------*/
+#dropdown {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 7%;
+  height: 10%;
+}
+#options {
+  float: right;
+  clear: right;
+  background-color: transparent;
+  border: none;
+  display: block;
+  font-size: 125%;
+}
 #dropdown-content {
+  float: right;
+  clear: right;
   display: none;
   position: absolute;
+  top: 25%;
   background-color: #f9f9f9;
   padding: 6px 8px;
   z-index: 1;
