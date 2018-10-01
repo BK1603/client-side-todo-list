@@ -7,6 +7,7 @@
 const inputButton = document.getElementById('inputbutton');
 const inputField = document.getElementById('inputfield');
 const todoList = document.getElementById('todo-list');
+const todo = document.getElementById('todo');
 const dmToggle = document.getElementById('dark-mode-toggle');
 const fontSelector = document.getElementById('font');
 
@@ -49,9 +50,19 @@ const addCheckbox = (li) => {
   li.appendChild(checkbox);
 };
 
+// function to set the visibility of the todo list div
+const setListView = () => {
+  if(todoList.hasChildNodes())
+    todo.style.display = 'block';
+  else
+    todo.style.display = 'none';
+}
+
 // removes the parent node of the current event
 const removeEl = (event) => {
   event.currentTarget.parentNode.remove();
+  // hides the list from view if there are no elements in it
+  setListView();
 };
 
 // adds a delete button that, when clicked, deletes the li element and the new button
@@ -71,6 +82,7 @@ const addToList = () => {
   li.appendChild(liText);
   addDelButton(li); // adds a delete button alongside the new li element
   todoList.appendChild(li);
+  setListView();
 };
 
 // checks to see if the input has a non-empty value in it before adding to the list
