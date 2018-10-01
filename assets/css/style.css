@@ -39,12 +39,33 @@ body {
   padding:5px 10px;
   width:100px;
 }
+.blue-button span{
+  cursor: pointer;
+  display: inline-block;
+  position:relative;
+  transition: 0.4s;
+}
+.blue-button span:after {
+  content: '+';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -5px;
+  transition: 0.4s;
+}
 .blue-button:hover{
   background-color:rgba(0,0,255,0.6);
   transform:scale(1.2,1.2);
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
   transition: 0.4s;
   -webkit-transition: 0.4s;
+}
+.blue-button:hover span{
+  padding-right: 25px;
+}
+.blue-button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 h1{
   margin:1.2em 0;
